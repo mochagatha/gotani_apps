@@ -7,6 +7,7 @@ abstract class Routes {
   static const PAGE_NAME = _Paths.PAGE_NAME;
   static const COMPONENTS = _Paths.COMPONENTS;
   static const SPLASH = _Paths.SPLASH;
+  static const REGISTER = _Paths.REGISTER;
 }
 
 abstract class _Paths {
@@ -15,4 +16,5 @@ abstract class _Paths {
   static const PAGE_NAME = '/page-name';
   static const COMPONENTS = '/components';
   static const SPLASH = '/splash';
+  static const REGISTER = '/register';
 }
