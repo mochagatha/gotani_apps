@@ -8,6 +8,8 @@ abstract class Routes {
   static const COMPONENTS = _Paths.COMPONENTS;
   static const SPLASH = _Paths.SPLASH;
   static const REGISTER = _Paths.REGISTER;
+  static const SPLASHHOME = _Paths.SPLASHHOME;
+  static const LOGIN = _Paths.LOGIN;
 }
 
 abstract class _Paths {
@@ -17,4 +19,6 @@ abstract class _Paths {
   static const COMPONENTS = '/components';
   static const SPLASH = '/splash';
   static const REGISTER = '/register';
+  static const SPLASHHOME = '/splashhome';
+  static const LOGIN = '/login';
 }
