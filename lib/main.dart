@@ -10,6 +10,9 @@ void main() {
     ResponsiveSizer(builder: (context, orientation, screenType) {
       return GetMaterialApp(
         debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          fontFamily: 'Roboto',
+        ),
         title: "Application",
         initialRoute: AppPages.INITIAL,
         getPages: AppPages.routes,

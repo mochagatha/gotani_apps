@@ -1,10 +1,6 @@
 import 'package:get/get.dart';
 
-class RegisterController extends GetxController {
-  //TODO: Implement RegisterController
-
-  final count = 0.obs;
-  var isEyes = true.obs;
+class ChatMessagesController extends GetxController {
   @override
   void onInit() {
     super.onInit();
@@ -19,6 +15,4 @@ class RegisterController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

@@ -12,7 +12,9 @@ class CustomTextField extends StatelessWidget {
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final bool readOnly;
+  final bool noLabel;
   final int maxLines;
+  final bool isBorder;
 
   const CustomTextField({
     super.key,
@@ -20,12 +22,14 @@ class CustomTextField extends StatelessWidget {
     required this.label,
     this.onChanged,
     this.obscureText = false,
+    this.noLabel = false,
     this.keyboardType,
     this.showLabel = true,
     this.prefixIcon,
     this.suffixIcon,
     this.readOnly = false,
     this.maxLines = 1,
+    this.isBorder = true,
   });
 
   @override
@@ -33,15 +37,17 @@ class CustomTextField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (showLabel) ...[
-          Text(
-            label,
-            style: const TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w700,
+        if (noLabel) ...[
+          if (showLabel) ...[
+            Text(
+              label,
+              style: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w700,
+              ),
             ),
-          ),
-          const SpaceHeight(12.0),
+            const SpaceHeight(12.0),
+          ],
         ],
         TextFormField(
           controller: controller,
@@ -51,18 +57,22 @@ class CustomTextField extends StatelessWidget {
           readOnly: readOnly,
           maxLines: maxLines,
           decoration: InputDecoration(
-            prefixIcon: prefixIcon,
-            suffixIcon: suffixIcon,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.0),
-              borderSide: const BorderSide(color: Colors.grey),
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.0),
-              borderSide: const BorderSide(color: Colors.grey),
-            ),
-            hintText: label,
-          ),
+              prefixIcon: prefixIcon,
+              suffixIcon: suffixIcon,
+              border: isBorder
+                  ? OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16.0),
+                      borderSide: const BorderSide(color: Colors.grey),
+                    )
+                  : InputBorder.none,
+              enabledBorder: isBorder
+                  ? OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16.0),
+                      borderSide: const BorderSide(color: Colors.grey),
+                    )
+                  : InputBorder.none,
+              hintText: label,
+              contentPadding: EdgeInsets.all(10)),
         ),
       ],
     );

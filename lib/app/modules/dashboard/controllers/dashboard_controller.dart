@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
 
-class LoginController extends GetxController {
-  //TODO: Implement LoginController
+class DashboardController extends GetxController {
+  //TODO: Implement DashboardController
 
   final count = 0.obs;
-  var isEyes = true.obs;
+  final selectedIndex = 0.obs; // New property for navbar index
 
   @override
   void onInit() {
@@ -22,4 +22,9 @@ class LoginController extends GetxController {
   }
 
   void increment() => count.value++;
+
+  void onItemTapped(int index) {
+    // New method for navbar item tap
+    selectedIndex.value = index;
+  }
 }

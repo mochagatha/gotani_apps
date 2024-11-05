@@ -41,7 +41,7 @@ class SplashhomeView extends GetView<SplashhomeController> {
                   height: 40.h,
                 ),
               ),
-              SpaceHeight(10),
+              SpaceHeight(50),
               Text(
                 "Selamat datang di toko online Gotani. Menjual berbagai macam  kebutuhan pertanian",
                 style: TextStyle(
@@ -50,7 +50,7 @@ class SplashhomeView extends GetView<SplashhomeController> {
                 ),
                 textAlign: TextAlign.center,
               ),
-              SpaceHeight(10),
+              SpaceHeight(50),
               Button.filled(
                 textColor: Colors.black,
                 color: Color(0xffd9d9d9),
